@@ -16,8 +16,8 @@ mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: t
 
 // Routes
 app.use('/api/employees', require('./routes/employees'));
-// app.use('/api/attendance', require('./routes/attendance'));
-// app.use('/api/leave', require('./routes/leave'));
+app.use('/api/attendance', require('./routes/attendance'));
+app.use('/api/leave', require('./routes/leave'));
 // app.use('/api/payroll', require('./routes/payroll'));
 // app.use('/api/documents', require('./routes/documents'));
 // app.use('/api/tasks', require('./routes/tasks'));

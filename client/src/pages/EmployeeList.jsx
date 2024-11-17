@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
 import SearchBar from '../components/SearchBar';
 import EmployeeCard from '../components/EmployeeCard';
 
@@ -14,7 +14,7 @@ function EmployeeList() {
 
   const fetchEmployees = async () => {
     try {
-      const response = await axios.get('/api/employees');
+      const response = await api.get('/employees');
       setEmployees(response.data);
       setFilteredEmployees(response.data);
     } catch (error) {
